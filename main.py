@@ -56,7 +56,7 @@ capabilities = dict(
     deviceName='',
     platformVersion='',
     appPackage='com.recarga.recarga',
-    appActivity='com.recarga.recarga:id/action_bar_root',
+    appActivity='com.recarga.recarga.react.ReactHomeActivity',
     #appActivity='com.recarga.recarga.react.ReactHomeActivity',
 )
 
@@ -83,7 +83,6 @@ while True:
         layout_bot = [
             [sg.Text("Modelo do Celular'"), sg.InputText(key='deviceName')],
             [sg.Text("Versão do Android'"), sg.InputText(key='platformVersion')],
-            [sg.Text("CPF da sua conta'"), sg.InputText(key='CPFvalue')],
             [sg.Button('Iniciar Bot')],
             [sg.Multiline('',size=(40, 10), key='logs_adicionados')],
         ]
@@ -104,7 +103,7 @@ while True:
 
                 # Execute test_get_infos para cada CNPJ
                 for cnpj in cnpjs:
-                    test_get_infos(driver, cnpj, values_bot['CPFvalue'])
+                    test_get_infos(driver, cnpj)
             
                 # Feche o driver após concluir todas as execuções
                 driver.quit()
