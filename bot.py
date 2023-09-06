@@ -18,7 +18,8 @@ def test_get_infos(driver, cnpj) -> None:
     print('bot iniciado')
     try:
         # clica na categoria "Fazer Pix"
-        WebDriverWait(driver, 35).until(EC.element_to_be_clickable((By.ID, 'Fazer Pix'))).click()
+        el1 = driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.View[2]")
+        el1.click()
 
         # insere o CNPJ da lista
         WebDriverWait(driver, 25).until(EC.element_to_be_clickable((By.CLASS_NAME, 'android.widget.EditText'))).click()
